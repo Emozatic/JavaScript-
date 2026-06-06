@@ -19,12 +19,7 @@ function failure(){
 }
 
 function check(success,failure,password){
-    if(password===1234){
-        success();
-    }
-    else{
-        failure();
-    }
+    password===1234 ? success() : failure();
 }
 
-check(success,failure,124);
+check(success,failure,1234);

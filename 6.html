@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Credentials checker</h1>
+
+    <input type="email" class="email"> 
+    <input type="text" class="password">
+
+    <button class="btn">Login</button>
+
+    <h3 class="msg"></h3>
+
+
+    <script>
+        let email= document.querySelector(".email");
+        let password= document.querySelector(".password");
+        let btn= document.querySelector(".btn");
+        let msg= document.querySelector(".msg");
+
+        btn.addEventListener("click",()=>{
+            if((email.value=="lk123@gmail.com")&&(password.value=="1234")){
+                msg.innerText="Welcome";
+            }
+            else{
+                msg.innerText="Bhag yahan se"
+            }
+
+            console.log(email.value)
+            console.log(password.value)
+
+            email.value="";
+            password.value=""
+
+        })
+    </script>
+</body>
+</html>

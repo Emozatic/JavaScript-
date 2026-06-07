@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class= "title">IsDay</h1>
+    <button class="toggler">Change</button>
+
+
+    <script>
+        let btn= document.querySelector(".toggler");
+        let title= document.querySelector(".title")
+        let body= document.querySelector("body");
+        let isDay= true;
+        function toggle(){
+            isDay=!isDay;
+            if(isDay===false){
+                title.innerText="Night";
+                body.style.background="black"
+                btn.innerText= "Dark"
+                title.style.color="white"
+            }
+            else{
+                title.innerText="Day";
+                body.style.background="Orange"
+                btn.innerText= "Light"
+            }
+        }
+        btn.addEventListener("click",()=>{
+            toggle();
+        })
+    </script>
+</body>
+</html>

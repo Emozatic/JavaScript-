@@ -6,6 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 class= "title">Color</h1>
+    <button class="red">Red</button>
+    <button class="yellow">Yellow</button>
+    <button class="blue">Blue</button>
+
+
+    <script>
+        let title= document.querySelector(".title")
+        let btn1= document.querySelector(".red")
+        let btn2= document.querySelector(".yellow")
+        let btn3= document.querySelector(".blue")
+
+        btn1.addEventListener("click",()=>{
+            title.style.color="red";
+        })
+        btn2.addEventListener("click",()=>{
+            title.style.color="yellow";
+        })
+        btn3.addEventListener("click",()=>{
+            title.style.color="blue";
+        })
+    </script>
 </body>
 </html>

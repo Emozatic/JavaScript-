@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+
+    <input type="text" class="inp">
+    <button class="btn">Add Todo</button>
+    <ul id="list">
+        
+    </ul>
+
+
+
+
+    <script>
+        let inp= document.querySelector(".inp");
+        let list= document.querySelector("#list");
+        let btn= document.querySelector(".btn")
+        
+
+        function add(){
+            let li= document.createElement("li");
+            li.innerText= inp.value;
+            list.appendChild(li);
+            let delBtn= document.createElement("button");
+            delBtn.innerText= "Delete";
+            li.appendChild(delBtn);
+            delBtn.addEventListener("click",()=>{
+            list.removeChild(li);
+        })  
+
+            inp.value="";
+        }
+        btn.addEventListener("click",()=>{
+            add();
+        })
+        
+    </script>
+</body>
+</html>

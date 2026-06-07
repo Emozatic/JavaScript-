@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input type="text" id="inp">
+<h1 class="title">Type something...</h1>
+
+    <script>
+        let inp= document.querySelector("#inp");
+        let title= document.querySelector(".title");
+
+        inp.addEventListener("input",()=>{
+            title.innerText= inp.value
+            console.log(inp.value)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <h1 id="title">0</h1>
+    <div class= "container">Hello JavaScript</div>
+    <button class= "btn">Increament</button>
+    <button class="btn2">Decreament</button>
+
+<script>
+    let title= document.querySelector("#title");
+    let count=0;
+    let btn2= document.querySelector(".btn2");
+    
+
+    //title.textContent="Lucky Sah"
+
+    // let container= document.querySelector(".container");
+    // container.textContent="Hello JS"
+
+    // container.style.border="2px solid red";
+    // container.style.height="100px";
+    // container.style.width="200px";
+    // container.style.backgroundColor="yellow";
+
+    function counter(){
+        count++;
+    }
+    function decCount(){
+        count--;
+    }
+
+    let btn= document.querySelector(".btn");
+    btn.addEventListener("click",function(){
+        counter();
+
+        title.innerText=count;
+    })
+
+    btn2.addEventListener("click",function(){
+        decCount();
+
+        title.innerText=count;
+    })
+    
+
+</script>
+</html>

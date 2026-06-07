@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class= "title">Character Counter</h1>
+    <input type="text" id="inp">
+    <h4 class="container"></h4>
+
+
+    <script>
+        let container=document.querySelector(".container")
+        let inp= document.querySelector("#inp")
+        inp.addEventListener("input",()=>{
+            container.textContent=inp.value.length
+        })
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <h3 class="question"></h3>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <h5 class="congrats"></h5>
+    <button class="next">Next</button>
+
+
+    <script>
+        const quiz=[{
+            question:"who created Js",
+            options:["Bill Gates", "Brenden Eich", "Larry Page"],
+            answer:"Brenden Eich"
+        },
+        {
+            question:"2+2=?",
+            options:["3","4","5"],
+            answer:"4"
+    }]
+
+        let questions= document.querySelector(".question")
+        let btn1= document.querySelector(".btn1")
+        let btn2= document.querySelector(".btn2")
+        let btn3= document.querySelector(".btn3")
+        let btns= document.querySelectorAll(".btn");
+        let congrats= document.querySelector(".congrats")
+        let next= document.querySelector(".next");
+        let score=0;
+
+        let currQuestion=0;
+        let isClicked=true;
+
+        function showQuestions(){
+            let q= quiz[currQuestion];
+            questions.innerText= q.question;
+            btns[0].innerText= q.options[0];
+            btns[1].innerText= q.options[1];
+            btns[2].innerText= q.options[2];
+            congrats.innerText="";
+        }
+
+        function getanswer(ans){
+            if(ans==quiz[currQuestion].answer){
+                score++;
+                congrats.innerText=`You got it ${score}`;
+            }
+            else{
+                congrats.innerText="Try again";
+            }
+        }
+
+    //     btn1.addEventListener("click",()=>{
+    //         isClicked=false;
+    //         if(isClicked==false){
+    //             btn1.disabled=true;
+    //         }
+    //         getanswer(btn1.innerText);
+    //     })
+    //    btn2.addEventListener("click",()=>{
+    //     isClicked=false;
+    //         if(isClicked==false){
+    //             btn2.disabled=true;
+    //         }
+    //         getanswer(btn2.innerText);
+    //     })
+    //     btn3.addEventListener("click",()=>{
+    //         isClicked=false;
+    //         if(isClicked==false){
+    //             btn3.disabled=true;
+    //         }
+    //         getanswer(btn3.innerText);
+    //     })
+
+    btns.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            isClicked=false;
+            if(isClicked==false){
+                btn.disabled=true;
+            }
+            getanswer(btn.innerText);
+        })
+    })
+
+        next.addEventListener("click",()=>{
+            currQuestion++;
+        if(currQuestion<quiz.length)     {
+            showQuestions();
+        }else{
+            questions.innerText="finished";
+        }    
+        })
+        showQuestions()
+    </script>
+</body>
+</html>

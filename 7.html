@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Password Viewer</h1>
+
+    <input type="password" class="pass">
+    <button class="button">show</button>
+
+
+    <script>
+        let pass= document.querySelector(".pass");
+        let btn= document.querySelector(".button");
+        let showPass=true;
+        btn.addEventListener("click",()=>{
+            showPass=!showPass;
+            if(showPass===true){
+                pass.type="text"
+                btn.innerText="hide"
+            }
+            else{
+                pass.type="password";
+                btn.innerText="Show";
+            }
+        })
+    </script>
+</body>
+
+
+</html>

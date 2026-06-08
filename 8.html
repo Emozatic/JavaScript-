@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <h2>Who created Js</h2>
+    <button class="btn">Larry Page</button>
+    <button class="btn">Bill Gates</button>
+    <button class="btn">Mark Zukerberg</button>
+    <button class="btn">Brenden Eich</button>
+
+    <h5 class="result"></h5>
+
+
+    <script>
+        let result=document.querySelector(".result");
+        let btns=document.querySelectorAll(".btn");
+        console.log(btns);
+        let score=0;
+        
+        btns.forEach((btn)=>{
+            console.log(btn);
+            btn.addEventListener("click",()=>{
+                console.log(btn.innerText);
+                if(btn.innerText=="Brenden Eich"){
+                score++;
+                result.innerText=`You got it ${score}`;
+                
+            }
+            else{
+                result.innerText="Try again";
+            }
+            })
+        })
+    </script>
+</body>
+</html>
